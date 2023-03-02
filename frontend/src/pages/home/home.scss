@@ -1,0 +1,8 @@
+.home {
+  //what's the diff b/w height and min height
+  height: 100vh;
+  display: flex;
+  .homeContainer {
+    flex: 6;
+  }
+}
