@@ -18,13 +18,15 @@ const getAllMeetings = async (req, res) => {
 //@access public
 //201 status code for creating a new resource
 const createMeeting = async (req, res) => {
-  console.log("inside here");
-  const { name, age, country } = req.body;
+  const { fullName, date, mode, notes, rating, status } = req.body;
   try {
     const meeting = await Meeting.create({
-      name,
-      age,
-      country,
+      fullName,
+      date,
+      mode,
+      notes,
+      rating,
+      status,
     });
     res.status(201).json(meeting);
   } catch (err) {

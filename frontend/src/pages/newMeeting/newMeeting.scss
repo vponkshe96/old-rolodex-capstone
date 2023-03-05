@@ -1,0 +1,92 @@
+.newMeeting {
+  height: 100vh;
+  display: flex;
+  .newMeetingContainer {
+    flex: 6;
+    .newMeetingTitle {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 15px;
+      color: purple;
+    }
+    .newMeetingForm {
+      -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      margin: 15px;
+      background-color: rgb(197, 235, 247);
+
+      display: flex;
+
+      .left {
+        flex: 1;
+        text-align: center;
+        img {
+          margin-top: 20px;
+          height: 200px;
+          width: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      .right {
+        margin-top: 10px;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .item {
+          width: 500px;
+          display: flex;
+          flex-direction: column;
+          margin: 5px;
+          > label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: purple;
+          }
+          > input {
+            height: 20px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid gray;
+            border-radius: 5px;
+          }
+          > textarea {
+            resize: none;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid gray;
+            border-radius: 5px;
+          }
+          > select {
+            height: 40px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid gray;
+            border-radius: 5px;
+          }
+        }
+        button {
+          height: 40px;
+          width: 120px;
+          border: none;
+          border-radius: 10px;
+          font-size: 14px;
+          margin: 20px;
+          background-color: purple;
+          color: white;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          .icon {
+            font-size: 20px !important;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+}

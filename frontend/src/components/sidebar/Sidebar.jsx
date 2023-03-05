@@ -1,5 +1,7 @@
 //May have to move title to Navbar
 import "./sidebar.scss";
+import { Link } from "react-router-dom";
+//import icons
 import RecordVoiceOverIcon from "@mui/icons-material/RecordVoiceOver";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -21,19 +23,26 @@ const Sidebar = () => {
         <div className="item">
           <p className="title">Dashboard</p>
           <ul>
-            <li className="subitem">
-              <DashboardIcon className="icon" />
-              <span className="text">Home</span>
-            </li>
+            {/* Link is placed on the outside to not disrupt subitem styling */}
+            <Link className="link" to="/">
+              <li className="subitem">
+                <DashboardIcon className="icon" />
+                <span className="text">Home</span>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="item">
           <p className="title">Meetings</p>
           <ul>
-            <li className="subitem">
-              <AddBoxIcon className="icon" />
-              <span className="text">Create </span>
-            </li>
+            {/* don't forget to put / before newMeeting else routing won't work properly */}
+            <Link className="link" to="/newMeeting">
+              <li className="subitem">
+                <AddBoxIcon className="icon" />
+                <span className="text">Create </span>
+              </li>
+            </Link>
+
             <li className="subitem">
               <VisibilityIcon className="icon" />
               <span className="text">View </span>

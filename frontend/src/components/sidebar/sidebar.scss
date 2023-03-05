@@ -1,5 +1,5 @@
 .sidebar {
-  flex: 1;
+  flex: 0.8;
   background-color: #2196f3;
   color: white;
   .top {
@@ -8,13 +8,13 @@
     justify-content: center;
     padding: 5px;
     .title {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: 600;
       margin-left: 5px;
       padding: 5px;
     }
     .icon {
-      font-size: 10px;
+      font-size: 40px !important;
     }
   }
   .rest {

@@ -1,0 +1,5 @@
+//disabling globally the default style of react router dom link component
+.link {
+  text-decoration: none;
+  color: inherit;
+}
