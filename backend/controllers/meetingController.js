@@ -18,9 +18,11 @@ const getAllMeetings = async (req, res) => {
 //@access public
 //201 status code for creating a new resource
 const createMeeting = async (req, res) => {
+  const image = req.file.filename;
   const { fullName, date, mode, notes, rating, status } = req.body;
   try {
     const meeting = await Meeting.create({
+      image,
       fullName,
       date,
       mode,

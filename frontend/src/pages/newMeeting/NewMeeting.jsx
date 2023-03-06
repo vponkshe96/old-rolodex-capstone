@@ -2,11 +2,12 @@
 import "./newMeeting.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { Add, AddPhotoAlternate } from "@mui/icons-material";
+import { Add } from "@mui/icons-material";
 import { useState } from "react";
 import axios from "axios";
 
 const NewMeeting = () => {
+  const [image, setImage] = useState(null);
   const [fullName, setFullName] = useState("");
   const [date, setDate] = useState("");
   const [mode, setMode] = useState("");
@@ -16,15 +17,23 @@ const NewMeeting = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const meeting = { fullName, date, mode, notes, rating, status };
+    const meeting = { image, fullName, date, mode, notes, rating, status };
     console.log(meeting);
+    //MUST specify headers since form data has image file
+    //not including this was causing errors
     const response = await axios.post(
       "http://localhost:8080/api/meetings",
-      meeting
+      meeting,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
     );
     if (response.status === 201) {
       alert("New meeting has been successfully added!");
     }
+    setImage("");
     setFullName("");
     setDate("");
     setMode("");
@@ -41,22 +50,26 @@ const NewMeeting = () => {
         <h1 className="newMeetingTitle">Add New Meeting</h1>
         <form className="newMeetingForm" onSubmit={handleSubmit}>
           <div className="left">
+            {/* creates URL to image saved on local device */}
             <img
               src={
-                "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                // https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg
+                image
+                  ? URL.createObjectURL(image)
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               }
               alt=""
             />
           </div>
           <div className="right">
-            {/* <div className="item">
-              <label htmlFor="file" id="imageSelector">
-                Select Image
-                <AddPhotoAlternate color="primary" className="icon" />
-              </label>
-              <input type="file" id="file" style={{ display: "none" }}></input>
-            </div> */}
+            <div className="item">
+              {/* image updates whenever new image file is selected */}
+              <input
+                type="file"
+                name="image"
+                required
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </div>
             <div className="item">
               <label>Full Name</label>
               <input

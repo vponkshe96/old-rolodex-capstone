@@ -5,6 +5,10 @@ const { Schema } = mongoose;
 
 const meetingSchema = new Schema(
   {
+    image: {
+      type: String,
+      required: true,
+    },
     fullName: {
       type: String,
       required: true,
