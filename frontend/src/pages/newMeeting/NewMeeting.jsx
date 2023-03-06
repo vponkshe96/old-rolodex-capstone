@@ -1,4 +1,3 @@
-//Image form input
 import "./newMeeting.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -7,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const NewMeeting = () => {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
   const [fullName, setFullName] = useState("");
   const [date, setDate] = useState("");
   const [mode, setMode] = useState("");
