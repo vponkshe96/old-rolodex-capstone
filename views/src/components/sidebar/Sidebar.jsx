@@ -42,11 +42,12 @@ const Sidebar = () => {
                 <span className="text">Create </span>
               </li>
             </Link>
-
-            <li className="subitem">
-              <VisibilityIcon className="icon" />
-              <span className="text">View </span>
-            </li>
+            <Link className="link" to="/meetingList">
+              <li className="subitem">
+                <VisibilityIcon className="icon" />
+                <span className="text">View </span>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="item">

@@ -1,2 +1,3 @@
 Frontend
 RESET and STYLE image input field
+beautiful alert message on page when meeting is created successfully
