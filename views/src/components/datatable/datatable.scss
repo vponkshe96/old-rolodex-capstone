@@ -1,0 +1,57 @@
+.datatableContainer {
+  padding: 20px;
+  .datatable {
+    .person {
+      display: flex;
+      align-items: center;
+      .image {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 30px;
+        padding: 30px;
+      }
+      .fullName {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+    .status {
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 40%;
+      text-align: center;
+      &.Active {
+        background-color: rgba(0, 128, 0, 0.05);
+        color: green;
+      }
+      &.Maintain {
+        background-color: rgba(255, 217, 0, 0.05);
+        color: goldenrod;
+      }
+      &.Ignore {
+        background-color: rgba(255, 0, 0, 0.05);
+        color: crimson;
+      }
+    }
+    .actionButtons {
+      display: flex;
+      align-items: center;
+      .edit {
+        border: none;
+        border-radius: 10px;
+        padding: 5px 10px;
+        background-color: #3bb077;
+        color: white;
+        cursor: pointer;
+        margin-right: 20px;
+      }
+      .delete {
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}
